@@ -6,6 +6,7 @@ FactoryGirl.define do
 		degree_name "Bachelor of Science"
 		field_of_study "Computer Science"
 		description "Degree program with hints of AngularJS and ROR"    
+  	user
   end
 
 end
