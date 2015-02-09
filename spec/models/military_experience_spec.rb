@@ -9,8 +9,6 @@ RSpec.describe MilitaryExperience, type: :model do
 		it { should belong_to(:user) }  	
   	it { should validate_presence_of(:branch) } 
   	it { should validate_presence_of(:mos) } 
-  	
-
   end
 
 end

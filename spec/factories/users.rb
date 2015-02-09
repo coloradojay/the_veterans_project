@@ -9,6 +9,9 @@ FactoryGirl.define do
     	verified true
     end
 
+    trait :with_military_experience do 
+    	military_experience
+    end
   end
 
 end
