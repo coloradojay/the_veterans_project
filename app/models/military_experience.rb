@@ -1,6 +1,6 @@
 class MilitaryExperience < ActiveRecord::Base
 
-	has_one :user
+	belongs_to :user
 
 	validates :branch, presence: true
 	validates :mos, presence: true

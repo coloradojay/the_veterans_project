@@ -12,18 +12,9 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 20150209011602) do
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "users", force: :cascade do |t|
-    t.string   "first_name",                   null: false
-    t.string   "last_name",                    null: false
-    t.string   "email",                        null: false
-    t.string   "phone_number"
-    t.boolean  "verified",     default: false, null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-  end
 
   create_table "military_experiences", force: :cascade do |t|
     t.string   "branch",     null: false
@@ -37,4 +28,15 @@ ActiveRecord::Schema.define(version: 20150209011602) do
 
   add_index "military_experiences", ["user_id"], name: "index_military_experiences_on_user_id", using: :btree
 
+  create_table "users", force: :cascade do |t|
+    t.string   "first_name",                   null: false
+    t.string   "last_name",                    null: false
+    t.string   "email",                        null: false
+    t.string   "phone_number"
+    t.boolean  "verified",     default: false, null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+  end
+
+  add_foreign_key "military_experiences", "users"
 end

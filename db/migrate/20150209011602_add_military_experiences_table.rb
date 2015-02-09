@@ -9,5 +9,6 @@ class AddMilitaryExperiencesTable < ActiveRecord::Migration
       t.integer :user_id, null: false
     end
       add_index :military_experiences, :user_id
+      add_foreign_key :military_experiences, :users
   end
 end
