@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
 
 	has_one :military_experience
+	has_one :address
 
 	validates :first_name, presence: true
 	validates :last_name, presence: true
