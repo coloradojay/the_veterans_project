@@ -64,7 +64,7 @@ end
 group :development do
   gem 'spirit_fingers'
   gem 'coffee-rails-source-maps'
-  gem 'better_errors'
+  gem 'better_errors', '~> 2.1.1'
   gem 'meta_request'
   gem 'pry-toys'
   gem 'bullet'

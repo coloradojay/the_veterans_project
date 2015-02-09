@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 	has_one :military_experience
 	has_one :address
 	has_many :education
+	has_many :work_history
 
 
 	validates :first_name, presence: true
