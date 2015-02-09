@@ -16,6 +16,19 @@ ActiveRecord::Schema.define(version: 20150209053020) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "addresses", force: :cascade do |t|
+    t.string   "address1",   null: false
+    t.string   "address2"
+    t.string   "city",       null: false
+    t.string   "state",      null: false
+    t.string   "zip",        null: false
+    t.integer  "user_id",    null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
+
   create_table "educations", force: :cascade do |t|
     t.string   "school_name",      null: false
     t.datetime "yr_attended_from"
@@ -29,19 +42,6 @@ ActiveRecord::Schema.define(version: 20150209053020) do
   end
 
   add_index "educations", ["user_id"], name: "index_educations_on_user_id", using: :btree
-
-  create_table "addresses", force: :cascade do |t|
-    t.string   "address1",   null: false
-    t.string   "address2"
-    t.string   "city",       null: false
-    t.string   "state",      null: false
-    t.string   "zip",        null: false
-    t.integer  "user_id",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
 
   create_table "military_experiences", force: :cascade do |t|
     t.string   "branch",     null: false
@@ -65,9 +65,7 @@ ActiveRecord::Schema.define(version: 20150209053020) do
     t.datetime "updated_at",                   null: false
   end
 
-  add_foreign_key "educations", "users"
-
   add_foreign_key "addresses", "users"
-
+  add_foreign_key "educations", "users"
   add_foreign_key "military_experiences", "users"
 end
