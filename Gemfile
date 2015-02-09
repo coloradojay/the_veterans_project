@@ -58,6 +58,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'spring-commands-rspec'
   gem 'shoulda'
+  gem 'faker'
 end
 
 group :development do
