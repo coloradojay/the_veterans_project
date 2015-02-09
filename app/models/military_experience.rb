@@ -5,5 +5,5 @@ class MilitaryExperience < ActiveRecord::Base
 	validates :user, presence: true
 	validates :branch, presence: true
 	validates :mos, presence: true
-
+	validates :user, presence: true
 end
