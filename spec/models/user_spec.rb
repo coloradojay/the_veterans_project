@@ -6,6 +6,7 @@ RSpec.describe User, type: :model do
   		u = build(:user)
   		expect(u.save).to eq true
   	end
+		# it { should have_and_belong_to_many(:skill) }
   	it { should have_one(:military_experience) }
 		it { should validate_presence_of(:first_name) }	
 		it { should validate_presence_of(:last_name) }	
