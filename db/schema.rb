@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209223345) do
+ActiveRecord::Schema.define(version: 20150210184637) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,11 @@ ActiveRecord::Schema.define(version: 20150209223345) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "skills_users", id: false, force: :cascade do |t|
+    t.integer "skill_id", null: false
+    t.integer "user_id",  null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "first_name",                   null: false
     t.string   "last_name",                    null: false
@@ -84,14 +89,6 @@ ActiveRecord::Schema.define(version: 20150209223345) do
   end
 
   add_index "work_histories", ["user_id"], name: "index_work_histories_on_user_id", using: :btree
-
-  create_table "users_skills", id: false, force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "skills_id"
-  end
-
-  add_index "users_skills", ["skills_id"], name: "index_users_skills_on_skills_id", using: :btree
-  add_index "users_skills", ["users_id"], name: "index_users_skills_on_users_id", using: :btree
 
   add_foreign_key "addresses", "users"
   add_foreign_key "educations", "users"

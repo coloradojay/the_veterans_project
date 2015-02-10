@@ -5,10 +5,7 @@ class CreateSkills < ActiveRecord::Migration
 
       t.timestamps null: false
     end
-    create_table :users_skills, id: false do |t|
-  		t.belongs_to :users, index: true
-  		t.belongs_to :skills, index: true
-  	end
+  
 
   end
 end
