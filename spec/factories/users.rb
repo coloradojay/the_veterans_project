@@ -4,7 +4,7 @@ FactoryGirl.define do
     last_name { Faker::Name.last_name }
     email { Faker::Internet.email }
     phone_number { Faker::PhoneNumber.cell_phone }
-
+    password "password"
     trait :verified do 
     	verified true
     end
