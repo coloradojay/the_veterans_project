@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210232849) do
+ActiveRecord::Schema.define(version: 20150211175137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,27 @@ ActiveRecord::Schema.define(version: 20150210232849) do
   end
 
   add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
+
+  create_table "companies", force: :cascade do |t|
+    t.string   "name",                            null: false
+    t.string   "address1",                        null: false
+    t.string   "address2"
+    t.string   "city",                            null: false
+    t.string   "state",                           null: false
+    t.string   "zip",                             null: false
+    t.string   "email",                           null: false
+    t.string   "phone_number",                    null: false
+    t.string   "website",                         null: false
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "google_plus"
+    t.string   "password_digest",                 null: false
+    t.text     "description"
+    t.integer  "num_employees",                   null: false
+    t.boolean  "verified",        default: false, null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+  end
 
   create_table "educations", force: :cascade do |t|
     t.string   "school_name",      null: false
