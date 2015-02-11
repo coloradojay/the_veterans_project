@@ -20,8 +20,17 @@ RSpec.describe User, type: :model do
 		it { should allow_value("test@test.com").for(:email) }
   end
 
-  describe "some other test" do 
-
+  describe "test password authentication" do
+  	it "should be able to set a password" do
+  		u = build(:user)
+  		expect(u.respond_to?(:password)).to eq true
+  	end
+  	it "should be able to authenticate" do 
+  		u = build(:user)
+  		u.password = "password"
+  		expect(u.authenticate("password")).to eq u
+  		expect(u.authenticate("wrongpassword")).to eq false
+  	end
 	end
 
 end
