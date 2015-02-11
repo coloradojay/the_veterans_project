@@ -56,15 +56,18 @@ ActiveRecord::Schema.define(version: 20150210184637) do
   add_index "military_experiences", ["user_id"], name: "index_military_experiences_on_user_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
-    t.string   "skill_name", null: false
+    t.string   "name",       null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "skills_users", id: false, force: :cascade do |t|
-    t.integer "skill_id", null: false
-    t.integer "user_id",  null: false
+    t.integer "skill_id"
+    t.integer "user_id"
   end
+
+  add_index "skills_users", ["skill_id"], name: "index_skills_users_on_skill_id", using: :btree
+  add_index "skills_users", ["user_id"], name: "index_skills_users_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",                   null: false

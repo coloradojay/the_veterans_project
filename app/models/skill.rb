@@ -1,6 +1,6 @@
 class Skill < ActiveRecord::Base
-	has_and_belongs_to_many :user
+	has_and_belongs_to_many :users
 
-	validates :skill_name, presence: true
+	validates :name, presence: true
 
 end

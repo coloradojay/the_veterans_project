@@ -2,11 +2,11 @@ class User < ActiveRecord::Base
 
 	has_one :military_experience
 	has_one :address
-	has_many :education
 
-	has_many :work_history
-
-	has_and_belongs_to_many :skill
+	has_many :educations
+	has_many :work_histories
+	
+	has_and_belongs_to_many :skills
 
 	validates :first_name, presence: true
 	validates :last_name, presence: true

@@ -6,8 +6,8 @@ RSpec.describe Skill, type: :model do
   		s = build(:skill)
   		expect(s.save).to eq true
   	end
-  	it { should have_and_belong_to_many(:user) }
-  	it { should validate_presence_of(:skill_name) }
+  	it { should have_and_belong_to_many(:users) }
+  	it { should validate_presence_of(:name) }
   end
 
 end
