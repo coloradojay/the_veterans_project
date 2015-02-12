@@ -8,6 +8,7 @@ RSpec.describe Company, type: :model do
 	  end
 	  it { should have_one(:type) }
 	  it { should have_one(:sector) }
+	  it { should have_and_belong_to_many(:vet_programs) }
 	  it { should validate_presence_of(:name) }	
 	  it { should validate_presence_of(:address1) }	
 	  it { should validate_presence_of(:city) }	

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150212000452) do
+ActiveRecord::Schema.define(version: 20150212010341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(version: 20150212000452) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
   end
+
+  create_table "companies_vet_programs", id: false, force: :cascade do |t|
+    t.integer "company_id"
+    t.integer "vet_program_id"
+  end
+
+  add_index "companies_vet_programs", ["company_id"], name: "index_companies_vet_programs_on_company_id", using: :btree
+  add_index "companies_vet_programs", ["vet_program_id"], name: "index_companies_vet_programs_on_vet_program_id", using: :btree
 
   create_table "educations", force: :cascade do |t|
     t.string   "school_name",      null: false
@@ -117,6 +125,13 @@ ActiveRecord::Schema.define(version: 20150212000452) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "password_digest"
+  end
+
+  create_table "vet_programs", force: :cascade do |t|
+    t.string   "name",       null: false
+    t.string   "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "work_histories", force: :cascade do |t|

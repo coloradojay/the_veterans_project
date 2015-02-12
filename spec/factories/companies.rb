@@ -39,6 +39,10 @@ FactoryGirl.define do
       type
     end
 
+    trait :with_vet_program do 
+      vet_programs
+    end
+
     factory :full_company, traits:[:with_verified,:with_address2, :with_facebook, :with_twitter, :with_google_plus, :with_sector, :with_type]
    
   end

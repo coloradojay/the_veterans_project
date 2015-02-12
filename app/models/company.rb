@@ -4,6 +4,8 @@ class Company < ActiveRecord::Base
 	has_one :type
 	has_one :sector
 
+	has_and_belongs_to_many :vet_programs
+
 	validates :name, presence: true
 	validates :address1, presence: true
 	validates :city, presence: true
