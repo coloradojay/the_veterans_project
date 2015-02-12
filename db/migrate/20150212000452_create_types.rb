@@ -8,6 +8,5 @@ class CreateTypes < ActiveRecord::Migration
     end
     	add_index :types, :company_id
     	add_foreign_key :types, :companies
-    end
   end
 end

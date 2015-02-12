@@ -8,6 +8,5 @@ class CreateSectors < ActiveRecord::Migration
     end
     	add_index :sectors, :company_id
     	add_foreign_key :sectors, :companies
-    end
   end
 end
