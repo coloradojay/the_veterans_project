@@ -6,6 +6,8 @@ RSpec.describe Company, type: :model do
 	  	comp = build(:company)
 	  	expect(comp.save).to eq true 
 	  end
+	  it { should have_one(:type) }
+	  it { should have_one(:sector) }
 	  it { should validate_presence_of(:name) }	
 	  it { should validate_presence_of(:address1) }	
 	  it { should validate_presence_of(:city) }	

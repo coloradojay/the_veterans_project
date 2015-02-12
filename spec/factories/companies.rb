@@ -31,7 +31,15 @@ FactoryGirl.define do
 	    	google_plus "google.com"
     end	
 
-    factory :full_company, traits:[:with_verified,:with_address2, :with_facebook, :with_twitter, :with_google_plus]
+    trait :with_sector do
+      sector
+    end
+
+    trait :with_type do
+      type
+    end
+
+    factory :full_company, traits:[:with_verified,:with_address2, :with_facebook, :with_twitter, :with_google_plus, :with_sector, :with_type]
    
   end
 

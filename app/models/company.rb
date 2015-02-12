@@ -1,6 +1,8 @@
 class Company < ActiveRecord::Base
 	has_secure_password
 
+	has_one :type
+	has_one :sector
 
 	validates :name, presence: true
 	validates :address1, presence: true
