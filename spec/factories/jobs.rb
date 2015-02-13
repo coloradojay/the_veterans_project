@@ -5,6 +5,7 @@ FactoryGirl.define do
     state { Faker::Address.state }
     description { Faker::Lorem.paragraph }
     salary "80K"
+    company
   end
 
 end

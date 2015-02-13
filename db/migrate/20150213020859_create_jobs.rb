@@ -6,8 +6,11 @@ class CreateJobs < ActiveRecord::Migration
     	t.string :state, null: false
     	t.text :description, limit: nil
     	t.string :salary
+      t.integer :company_id, null: false
 
       t.timestamps null: false
     end
+      add_index :jobs, :company_id
+      add_foreign_key :jobs, :companies
   end
 end
