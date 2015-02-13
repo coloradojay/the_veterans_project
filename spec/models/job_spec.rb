@@ -6,9 +6,9 @@ RSpec.describe Job, type: :model do
         j = build(:job)
         expect(j.save).to eq true 
       end
-      it { should have_one(:company) }
+      it { should belong_to(:company) }
       it { should have_one(:experience) }
-      it { should have_one(:employmenttype) }
+      it { should have_one(:employment_type) }
       it { should have_one(:jobfunction) }
       it { should have_one(:status) } 
       it { should validate_presence_of(:title) }  

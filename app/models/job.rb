@@ -1,5 +1,5 @@
 class Job < ActiveRecord::Base
-	has_one :company
+	belongs_to :company
 	has_one :employment_type
 	has_one :experience
 	has_one :jobfunction
@@ -10,4 +10,5 @@ class Job < ActiveRecord::Base
 	validates :state, presence: true
 	validates :description, presence: true
 	validates :salary, presence: true
+	validates :company, presence: true
 end

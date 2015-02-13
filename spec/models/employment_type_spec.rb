@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe EmploymentType, type: :model do
   describe "validation" do
   	it "should have a valid factory" do
-  		emp = build(:employmenttype)
+  		emp = build(:employment_type)
   		expect(emp.save).to eq true
   	end
   	it { should belong_to(:job) }
