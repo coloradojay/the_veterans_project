@@ -1,4 +1,4 @@
-class CreateJoinTableSkillUser < ActiveRecord::Migration
+Tclass CreateJoinTableSkillUser < ActiveRecord::Migration
   def change
     # create_join_table :skills, :users do |t|
       # t.index [:skill_id, :user_id]

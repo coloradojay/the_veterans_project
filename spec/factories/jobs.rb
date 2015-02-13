@@ -6,6 +6,7 @@ FactoryGirl.define do
     description { Faker::Lorem.paragraph }
     salary "80K"
     company
+
   end
 
 end

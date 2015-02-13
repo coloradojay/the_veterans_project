@@ -11,6 +11,7 @@ RSpec.describe Job, type: :model do
       it { should have_one(:employment_type) }
       it { should have_one(:jobfunction) }
       it { should have_one(:status) } 
+      it { should have_and_belong_to_many(:skills) }
       it { should validate_presence_of(:title) }  
       it { should validate_presence_of(:city) }  
       it { should validate_presence_of(:state) }  
