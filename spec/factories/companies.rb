@@ -11,6 +11,10 @@ FactoryGirl.define do
   	description { Faker::Lorem.paragraph }
   	password "password"
   	num_employees "20"
+    contact_name { Faker::Name.name }
+    contact_position { Faker::Name.title }
+    contact_email { Faker::Internet.email }
+    contact_phone { Faker::PhoneNumber.phone_number }
 
   	trait :with_address2 do
   		address2 { Faker::Address.secondary_address }

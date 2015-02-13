@@ -15,6 +15,10 @@ class Company < ActiveRecord::Base
 	validates :website, presence: true
 	validates :num_employees, presence: true
 	validates :description, presence: true
+	validates :contact_name, presence: true
+	validates :contact_position, presence: true
+	validates :contact_email, presence: true	
+	validates :contact_phone, presence: true
 	validates :verified, inclusion: { in: [true, false] }
 	validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
