@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'home/index'
+
   get 'static_pages/index'
 
-  root to: 'static_pages#index'
+  root 'static_pages#index'
+
+  resources :users
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
