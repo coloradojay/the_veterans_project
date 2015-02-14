@@ -44,7 +44,7 @@ group :development, :test do
   gem 'spring'
 end
 
-# gem 'slim'
+gem 'slim'
 gem 'chronic'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
