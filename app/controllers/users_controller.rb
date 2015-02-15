@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
+		@submit_message = 'Sign Up'	
 	end
 
 	def show 
@@ -24,6 +25,7 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
+		@submit_message = 'Edit Account'
 	end
 
 	def post

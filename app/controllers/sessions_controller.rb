@@ -6,9 +6,10 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:login][:email]) unless params[:login][:email].empty?
     if user && user.authenticate(params[:login][:password])
       session[:user_id] = user.id.to_s
-      redirect_to user_path(current_user)
+      redirect_to user
     else
-      render "sessions/new", alert: 'Unable to login'
+      flash[:error] = "Invalid email or password"
+      redirect_to login_path
     end
   end
 

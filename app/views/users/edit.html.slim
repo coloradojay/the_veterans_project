@@ -5,6 +5,6 @@
     - unless @user.errors.full_messages.empty?
       h1.text-center Oops!
       ul.list-group
-      	- @user.errors.full_messages.each do |msg|
+        - @user.errors.full_messages.each do |msg|
           li.list-group-items.list-group-item-danger
             = msg

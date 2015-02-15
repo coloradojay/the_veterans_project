@@ -1,8 +1,14 @@
-ul
-	li
-		- if current_user
+ul.nav.navtabs
+	- if current_user
+		li
 			= link_to "logout", session_path(current_user.id), method: :delete
-		- else
+		li
+			= link_to "my account", @user 
+	- else
+		li
 			= link_to "Sign up", new_user_path
+		li	
+			= link_to "login", login_path
 	li
 		= link_to "home", root_path
+		
