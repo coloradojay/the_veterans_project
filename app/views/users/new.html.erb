@@ -1,21 +1,18 @@
 <div class="container signup">
-    <div class="col-md-offset-4 col-md-4">
-        <h2>Sign up today</h2>
-
-         <%= form_for @user do |f| %>         
-
-          <%= f.text_field :first_name, class: "form-control", autofocus: true, placeholder: "First Name" %>
-          <br /> 
-          <%= f.text_field :last_name, class: "form-control", autofocus: true, placeholder: "Last Name" %>
-          <br />                
-          <%= f.email_field :email, class: "form-control", placeholder:"Email" %>     
-          <br />   
-          <%= f.text_field :phone_number, class: "form-control", placeholder:"(213)555-1212" %>     
-          <br />                         
-          <%= f.password_field :password, class: "form-control", placeholder:"Password" %>
-          <br />
-                  
-          <%= f.submit "Create my account", class: "form-control btn-success" %>
-        <% end %>
-    </div>
+  <div class="col-md-offset-4 col-md-4">
+    <h2>Sign up today</h2>
+    <%= form_for @user do |f| %>
+      <%= f.text_field :first_name, class: "form-control", autofocus: true, placeholder: "First Name" %>
+      <br />
+      <%= f.text_field :last_name, class: "form-control", autofocus: true, placeholder: "Last Name" %>
+      <br />
+      <%= f.email_field :email, class: "form-control", placeholder:"Email" %>
+      <br />
+      <%= f.text_field :phone_number, class: "form-control", placeholder:"(213)555-1212" %>
+      <br />
+      <%= f.password_field :password, class: "form-control", placeholder:"Password" %>
+      <br />
+      <%= f.submit "Create my account", class: "form-control btn-success" %>
+    <% end %>
+  </div>
 </div>
