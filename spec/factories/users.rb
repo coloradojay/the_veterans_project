@@ -18,7 +18,7 @@ FactoryGirl.define do
       address 
     end
 
-    factory :full_user, traits: [:with_verified, :with_military_experience, :with_address], parent: :user do |user|      
+    factory :full_user, traits: [:with_verified], parent: :user do |user|      
       transient do
         educations_count 2
         skills_count 7
@@ -30,6 +30,8 @@ FactoryGirl.define do
 
        after(:create) do |user, evaluator|
         create_list(:education, evaluator.educations_count, user: user)
+        create(:military_experience, user: user)
+        create(:address, user: user)
       end
     end
   end
