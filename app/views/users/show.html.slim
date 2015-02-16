@@ -3,8 +3,10 @@
     center
       h2= "#{@user.first_name.titleize} #{@user.last_name.titleize}"
       / = link_to image_tag( @user.avatar.url, size: "200x200", class: "img-circle"), edit_user_path(@user)
-      br/
+      br
       em Click image to edit your profile
       h3= "#{@user.email}"
-      br/
-
+      br
+      h3 Address
+      br
+   		= simple_format(@user.address.full_address)
