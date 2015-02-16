@@ -35,6 +35,18 @@
       == render 'education_fields', f: education
     .links
       = link_to_add_association 'Add Education', f, :educations
+  h1 Work History
+  #work_histories
+    = f.fields_for :work_histories do |work_history|
+      == render 'work_history_fields', f: work_history
+    .links
+      = link_to_add_association 'Add Work History', f, :work_histories
+  h1 Skills
+  #skills
+    = f.fields_for :skills do |skill|
+      == render 'skill_fields', f: skill
+    .links
+      = link_to_add_association 'Add Skill', f, :skills
   div
     = f.submit @submit_message, class: "btn btn-primary"  
 

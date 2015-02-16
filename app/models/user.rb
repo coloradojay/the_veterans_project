@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 	has_and_belongs_to_many :skills
 
 	accepts_nested_attributes_for :educations, reject_if: :all_blank, allow_destroy: true
+	accepts_nested_attributes_for :work_histories, reject_if: :all_blank, allow_destroy: true
+	accepts_nested_attributes_for :skills, reject_if: :all_blank, allow_destroy: true
 
 	validates :first_name, presence: true
 	validates :last_name, presence: true

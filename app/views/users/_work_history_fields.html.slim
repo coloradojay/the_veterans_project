@@ -1,0 +1,26 @@
+.nested-fields
+	.field
+		= f.label :company_name
+		br
+		= f.text_field :company_name
+	.field
+		= f.label :job_title
+		br
+		= f.text_field :job_title
+	.field
+		= f.label :location
+		br
+		= f.text_field :location
+	.field
+		= f.label "Start Year"
+		br
+		= f.date_select :start_date
+	.field
+		= f.label "End Year"
+		br
+		= f.date_select :end_date
+	.field
+		= f.label :description
+		br
+		= f.text_area :description
+	= link_to_remove_association "Remove Work History", f
