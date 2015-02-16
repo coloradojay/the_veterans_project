@@ -1,0 +1,49 @@
+= form_for @company do |f|
+  .form-group
+    = f.text_field :name, class: "form-control", placeholder: "Company Name"
+  .form-group
+    = f.label :address, class: "control-label", placeholder: "Address"
+    = f.text_field :address1, class: "form-control", placeholder: "1617 Broadway"
+  .form-group
+    = f.label :city, class: "control-label", placeholder: "City"
+    = f.text_field :city, class: "form-control", placeholder: "Santa Monica"
+  .form-group
+    = f.label :state, class: "control-label", placeholder: "State"
+    = f.text_field :state, class: "form-control", placeholder: "CA"
+  .form-group
+    = f.label :zip, class: "control-label", placeholder: "Zip Code"
+    = f.text_field :zip, class: "form-control", placeholder: "90404"
+  .form-group
+    = f.text_field :phone_number, class: "form-control", placeholder: "213-555-1212"
+  .form-group
+    = f.text_field :website, class: "form-control", placeholder: "www.acme.com"
+  .form-group
+    = f.label :num_employees, class: "control-label", placeholder: "Number of Employees"
+    = f.text_field :num_employees, class: "form-control", placeholder: "Ex: 100"
+  .form-group
+    = f.label :description, class: "control-label", placeholder: "Description"
+    = f.text_area :description, class: "form-control"
+  .form-group
+    = f.label :contact_name, class: "control-label", placeholder: "Company Contact"
+    = f.text_field :contact_name, class: "form-control"
+  .form-group
+    = f.label :contact_position, class: "control-label", placeholder: "Position of Contact"
+    = f.text_field :contact_position, class: "form-control"
+  .form-group
+    = f.label :contact_email, class: "control-label", placeholder: "Contact Email"
+    = f.text_field :contact_email, class: "form-control"
+  .form-group
+    = f.label :contact_phone, class: "control-label", placeholder: "Contact Phone"
+    = f.text_field :contact_phone, class: "form-control"    
+  .form-group
+    = f.label :login_email, class: "control-label", placeholder: "Login Email"
+    = f.text_field :email, class: "form-control", placeholder: "bob@acme.com"
+  .form-group
+    = f.label :password, class: "control-label", placeholder: "Password"
+    = f.password_field :password, class: "form-control"
+  .form-group
+    = f.label :password_confirmation, class: "control-label", placeholder: "Confirm Password"
+    = f.password_field :password_confirmation, class: "form-control"
+  br
+  div
+    = f.submit @submit_message, class: "btn btn-primary"  

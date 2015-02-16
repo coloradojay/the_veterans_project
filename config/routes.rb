@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
-  get 'home/index'
-
-  get 'static_pages/index'
 
   root 'static_pages#index'
 
   resources :users
+  resources :companies
   resources :sessions, only: [:new, :create, :destroy]
 
   get "/login" => "sessions#new"

@@ -1,4 +1,4 @@
-ul.nav.navtabs
+ul.nav.navbar
 	- if current_user
 		li
 			= link_to "logout", session_path(current_user.id), method: :delete
@@ -9,6 +9,8 @@ ul.nav.navtabs
 			= link_to "Sign up", new_user_path
 		li	
 			= link_to "login", login_path
+		li
+			= link_to "Business", new_company_path
 	li
 		= link_to "home", root_path
 		
