@@ -21,7 +21,7 @@
     			td= @user.military_experience.end_date.strftime("%m-%d-%Y")
      			td= @user.military_experience.branch
     			td= @user.military_experience.mos
-      h3 Education (many)
+      h3 Education
       - @user.educations.each do |e|
      		= e.school_name.upcase
      		br 
@@ -29,5 +29,38 @@
      		br
      		= "(#{e.yr_attended_from.strftime("%Y")} - #{e.yr_attended_to.strftime("%Y")})"
      		p= e.description
-      h3 Work History(many)
-      h3 Skills (many)
+      h3 Work History
+      - @user.work_histories.each do |wk|
+        = wk.company_name.upcase
+        br
+        = "#{wk.job_title}"
+        br
+        = "worked from #{wk.start_date.strftime("%Y")} - #{wk.end_date.strftime("%Y")}"
+        p
+      h3 Skills 
+      ul
+        - @user.skills.each do |sk|
+          li= sk.name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

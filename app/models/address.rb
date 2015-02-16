@@ -9,7 +9,7 @@ class Address < ActiveRecord::Base
 	validates :user, presence: true
 
 	def full_address
-	 	unless address2.empty?
+	 	unless address2.blank?
 	 		"#{address1}\n#{address2}\n #{city}, #{state}. #{zip}"
 	 	else
 	 		"#{address1}\n #{city}, #{state}. #{zip}"

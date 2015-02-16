@@ -3,7 +3,7 @@ ul.nav.navbar
 		li
 			= link_to "logout", session_path(current_user.id), method: :delete
 		li
-			= link_to "my account", @user 
+			= link_to "my account", current_user 
 	- else
 		li
 			= link_to "Sign up", new_user_path
