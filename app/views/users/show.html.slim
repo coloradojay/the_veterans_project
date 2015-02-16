@@ -12,7 +12,8 @@
       h3 Address
       - unless @user.address.blank?
         = simple_format(@user.address.full_address)
-        h3 Military Experience
+      h3 Military Experience
+      - unless @user.military_experience.blank?
         table
         	tr
         		th Start Date

@@ -25,6 +25,7 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
+		@user.build_address if @user.address.blank?
 		@submit_message = 'Update Account'
 	end
 
@@ -57,7 +58,8 @@ class UsersController < ApplicationController
 			 		:yr_attended_to, :degree_name, :field_of_study, :description, :_destroy],
 		 		work_histories_attributes: [:id, :company_name, :job_title, :location, 
 		 			:start_date, :end_date, :description, :_destroy],
-	 			skills_attributes: [:id, :name, :_destroy ])
+	 			skills_attributes: [:id, :name, :_destroy ],
+	 			address_attributes: [:id, :address1, :address2, :city, :state, :zip, :_destroy])
 		end
 
 end
