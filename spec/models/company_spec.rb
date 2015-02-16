@@ -6,7 +6,6 @@ RSpec.describe Company, type: :model do
 	  	comp = build(:company)
 	  	expect(comp.save).to eq true 
 	  end
-	  it { should have_one(:user)}
 	  it { should have_one(:type) }
 	  it { should have_one(:sector) }
 	  it { should have_many(:jobs) }
