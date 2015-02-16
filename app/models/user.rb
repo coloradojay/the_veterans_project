@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
 	has_secure_password
-	has_one :company
+
 	has_one :military_experience
 	has_one :address
 	has_many :educations
