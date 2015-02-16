@@ -15,14 +15,13 @@ FactoryGirl.define do
     end
 
     trait :with_address do 
-        address 
+      address 
     end
 
-    trait :with_skill do 
-        skill 
+    factory :full_user, traits: [:with_verified, :with_military_experience, :with_address], parent: :user do |user|
+      skills { build_list :skill, 3}
+      work_histories {build_list :work_history, 5}
     end
-
-    factory :full_user, traits: [:with_verified, :with_military_experience, :with_address]
   end
 
 end
