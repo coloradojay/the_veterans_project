@@ -6,6 +6,7 @@ RSpec.describe User, type: :model do
   		u = build(:user)
   		expect(u.save).to eq true
   	end
+    it { should have_one(:company) }
   	it { should have_one(:military_experience) }
   	it { should have_one(:address) }
   	it { should have_many(:educations) }

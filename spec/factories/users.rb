@@ -18,6 +18,10 @@ FactoryGirl.define do
       address 
     end
 
+    trait :with_company do
+      company 
+    end
+
     factory :full_user, traits: [:with_verified], parent: :user do |user|      
       transient do
         educations_count 2
