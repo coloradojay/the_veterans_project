@@ -72,6 +72,7 @@ GEM
     chronic (0.10.2)
     clipboard (1.0.5)
     cliver (0.3.2)
+    cocoon (1.2.6)
     coderay (1.1.0)
     coffee-rails (4.1.0)
       coffee-script (>= 2.2.0)
@@ -358,6 +359,7 @@ DEPENDENCIES
   bullet
   capybara
   chronic
+  cocoon
   coffee-rails (~> 4.1.0)
   coffee-rails-source-maps
   database_cleaner

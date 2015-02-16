@@ -44,6 +44,7 @@ group :development, :test do
   gem 'spring'
 end
 
+gem 'cocoon'
 gem 'slim'
 gem 'chronic'
 gem 'bootstrap-sass'
