@@ -1,0 +1,17 @@
+.nested-fields
+  .field
+    = f.label :branch
+    br
+    = f.text_field :branch
+  .field
+    = f.label :mos
+    br
+    = f.text_field :mos
+  .field
+    = f.label "Served From"
+    br
+    = f.date_select :start_date
+  .field
+    = f.label "Served To"
+    br
+    = f.date_select :end_date

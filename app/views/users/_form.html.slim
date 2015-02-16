@@ -20,7 +20,11 @@
   h1 Address
   #address
     = f.fields_for :address do |a|
-      == render 'address_fields', f: a
+      == render 'address_fields', f: a  
+  h1 Military Experience
+  #military_experience
+    = f.fields_for :military_experience do |me|
+      == render 'military_experience_fields', f: me
   h1 Education
   #educations
     = f.fields_for :educations do |education|
