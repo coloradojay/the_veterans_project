@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150213062214) do
+ActiveRecord::Schema.define(version: 20150216224902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,7 +52,10 @@ ActiveRecord::Schema.define(version: 20150213062214) do
     t.string   "contact_position"
     t.string   "contact_email"
     t.string   "contact_phone"
+    t.integer  "user_id"
   end
+
+  add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
 
   create_table "companies_vet_programs", id: false, force: :cascade do |t|
     t.integer "company_id"
@@ -185,6 +188,7 @@ ActiveRecord::Schema.define(version: 20150213062214) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.string   "password_digest"
+    t.boolean  "business",        default: false, null: false
   end
 
   create_table "vet_programs", force: :cascade do |t|
@@ -209,6 +213,7 @@ ActiveRecord::Schema.define(version: 20150213062214) do
   add_index "work_histories", ["user_id"], name: "index_work_histories_on_user_id", using: :btree
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "companies", "users"
   add_foreign_key "educations", "users"
   add_foreign_key "employment_types", "jobs"
   add_foreign_key "experiences", "jobs"

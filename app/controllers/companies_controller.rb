@@ -9,7 +9,7 @@ class CompaniesController < ApplicationController
     if @company.save
       session[:company_id] = @company.id
       flash[:notice] = "Company successfully created!"
-      redirect_to root_path
+      redirect_to company_path(@company)
     else
       render :new
     end

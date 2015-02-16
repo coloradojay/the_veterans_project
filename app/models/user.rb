@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
 	has_one :military_experience
 	has_one :address
+	has_one :company
 	has_many :educations
 	has_many :work_histories
 	has_and_belongs_to_many :skills
