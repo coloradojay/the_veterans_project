@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
 	def edit
 		@user = User.find(params[:id])
-		@submit_message = 'Edit Account'
+		@submit_message = 'Update Account'
 	end
 
 	def post
@@ -37,7 +37,7 @@ class UsersController < ApplicationController
 
 		if @user.update(user_params)
 			flash[:notice] = "This user has been updated."
-			redirect_to users_path
+			redirect_to @user
 		else
 			render :edit
 		end
@@ -51,7 +51,9 @@ class UsersController < ApplicationController
 
 	private
 		def user_params
-			params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :address, :work_history, :military_experience, :skill, :education)
+			params.require(:user).permit(:first_name, :last_name, 
+				:email, :password, :password_confirmation,
+				educations_attributes: [:id, :school_name, :yr_attended_from, :yr_attended_to, :degree_name, :field_of_study, :description, :_destroy])
 		end
 
 end

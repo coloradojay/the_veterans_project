@@ -29,6 +29,12 @@
   div
     = f.file_field :image 
   br
+  h1 Education
+  #educations
+    = f.fields_for :educations do |education|
+      == render 'education_fields', f: education
+    .links
+      = link_to_add_association 'Add Education', f, :educations
   div
     = f.submit @submit_message, class: "btn btn-primary"  
 
