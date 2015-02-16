@@ -8,19 +8,20 @@
       h3= "#{@user.email}"
       br
       h3 Address
-      = simple_format(@user.address.full_address)
-      h3 Military Experience
-      table
-      	tr
-      		th Start Date
-      		th End Date
-      		th Branch 
-      		th MOS
-    		tr
-    			td= @user.military_experience.start_date.strftime("%m-%d-%Y")
-    			td= @user.military_experience.end_date.strftime("%m-%d-%Y")
-     			td= @user.military_experience.branch
-    			td= @user.military_experience.mos
+      - unless @user.address.blank?
+        = simple_format(@user.address.full_address)
+        h3 Military Experience
+        table
+        	tr
+        		th Start Date
+        		th End Date
+        		th Branch 
+        		th MOS
+      		tr
+      			td= @user.military_experience.start_date.strftime("%m-%d-%Y")
+      			td= @user.military_experience.end_date.strftime("%m-%d-%Y")
+       			td= @user.military_experience.branch
+      			td= @user.military_experience.mos
       h3 Education
       - @user.educations.each do |e|
      		= e.school_name.upcase
