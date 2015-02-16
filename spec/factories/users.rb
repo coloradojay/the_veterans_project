@@ -18,9 +18,19 @@ FactoryGirl.define do
       address 
     end
 
-    factory :full_user, traits: [:with_verified, :with_military_experience, :with_address], parent: :user do |user|
-      skills { build_list :skill, 3}
-      work_histories {build_list :work_history, 5}
+    factory :full_user, traits: [:with_verified, :with_military_experience, :with_address], parent: :user do |user|      
+      transient do
+        educations_count 2
+        skills_count 7
+        work_histories_count 3
+      end
+
+      skills { build_list :skill, skills_count }
+      work_histories { build_list :work_history, work_histories_count }
+
+       after(:create) do |user, evaluator|
+        create_list(:education, evaluator.educations_count, user: user)
+      end
     end
   end
 
