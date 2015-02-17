@@ -12,6 +12,7 @@ class UsersController < ApplicationController
 
 	def show 
 		@user = User.find(params[:id])
+		@company = @user.company
 	end
 
 	def create
@@ -20,16 +21,6 @@ class UsersController < ApplicationController
 			session[:user_id] = @user.id
 			flash[:notice] = "User successfully created!"
 			redirect_to user_path(@user)
-		else
-			render :new
-		end
-	end
-
-	def business_create
-		@user = User.new(user_params)
-		if @user.save
-			session[:user_id] = @user.id
-			redirect_to new_company_path
 		else
 			render :new
 		end
