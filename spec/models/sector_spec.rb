@@ -6,7 +6,7 @@ RSpec.describe Sector, type: :model do
   		type = build(:sector)
   		expect(type.save).to eq true
   	end
-  	it { should belong_to(:company) }
+  	it { should have_many(:companies) }
   	it { should validate_presence_of(:name) }
   end
 end

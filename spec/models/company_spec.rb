@@ -6,8 +6,8 @@ RSpec.describe Company, type: :model do
 	  	comp = build(:company)
 	  	expect(comp.save).to eq true 
 	  end
-	  it { should have_one(:type) }
-	  it { should have_one(:sector) }
+	  it { should belong_to(:type) }
+	  it { should belong_to(:sector) }
 	  it { should have_many(:jobs) }
 	  it { should have_and_belong_to_many(:vet_programs) }
 	  it { should validate_presence_of(:name) }	
