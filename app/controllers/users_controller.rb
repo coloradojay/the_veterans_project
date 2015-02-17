@@ -39,6 +39,7 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@user.build_address if @user.address.blank?
 		@user.build_military_experience if @user.military_experience.blank?
+		@veteran_message = 'Update Account'
 		@submit_message = 'Update Account'
 	end
 
