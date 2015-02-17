@@ -1,8 +1,7 @@
 class Type < ActiveRecord::Base
 	
-	belongs_to :company
+	has_many :companies
 
 	validates :name, presence: true
-	validates :company, presence: true
 
 end

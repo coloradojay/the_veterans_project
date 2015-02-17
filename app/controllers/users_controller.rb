@@ -5,7 +5,9 @@ class UsersController < ApplicationController
 
 	def new
 		@user = User.new
-		@submit_message = 'Sign Up'	
+		@submit_message = 'Sign Up'
+		@veteran_message = 'Sign Up As A Veteran'
+		@business_message = 'Sign Up As A Company'
 	end
 
 	def show 
@@ -21,7 +23,17 @@ class UsersController < ApplicationController
 		else
 			render :new
 		end
-	end 
+	end
+
+	def business_create
+		@user = User.new(user_params)
+		if @user.save
+			session[:user_id] = @user.id
+			redirect_to new_company_path
+		else
+			render :new
+		end
+	end
 
 	def edit
 		@user = User.find(params[:id])
@@ -54,7 +66,7 @@ class UsersController < ApplicationController
 	private
 		def user_params
 			params.require(:user).permit(:first_name, :last_name, 
-				:email, :password, :password_confirmation,
+				:email, :password, :password_confirmation,:business,
 				educations_attributes: [:id, :school_name, :yr_attended_from,
 			 		:yr_attended_to, :degree_name, :field_of_study, :description, :_destroy],
 		 		work_histories_attributes: [:id, :company_name, :job_title, :location, 

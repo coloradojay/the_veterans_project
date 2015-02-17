@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150216224902) do
+ActiveRecord::Schema.define(version: 20150217015334) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,8 +53,12 @@ ActiveRecord::Schema.define(version: 20150216224902) do
     t.string   "contact_email"
     t.string   "contact_phone"
     t.integer  "user_id"
+    t.integer  "type_id"
+    t.integer  "sector_id"
   end
 
+  add_index "companies", ["sector_id"], name: "index_companies_on_sector_id", using: :btree
+  add_index "companies", ["type_id"], name: "index_companies_on_type_id", using: :btree
   add_index "companies", ["user_id"], name: "index_companies_on_user_id", using: :btree
 
   create_table "companies_vet_programs", id: false, force: :cascade do |t|
@@ -140,12 +144,9 @@ ActiveRecord::Schema.define(version: 20150216224902) do
 
   create_table "sectors", force: :cascade do |t|
     t.string   "name"
-    t.integer  "company_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "sectors", ["company_id"], name: "index_sectors_on_company_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string   "name",       null: false
@@ -172,12 +173,9 @@ ActiveRecord::Schema.define(version: 20150216224902) do
 
   create_table "types", force: :cascade do |t|
     t.string   "name"
-    t.integer  "company_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  add_index "types", ["company_id"], name: "index_types_on_company_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name",                      null: false
@@ -213,6 +211,8 @@ ActiveRecord::Schema.define(version: 20150216224902) do
   add_index "work_histories", ["user_id"], name: "index_work_histories_on_user_id", using: :btree
 
   add_foreign_key "addresses", "users"
+  add_foreign_key "companies", "sectors"
+  add_foreign_key "companies", "types"
   add_foreign_key "companies", "users"
   add_foreign_key "educations", "users"
   add_foreign_key "employment_types", "jobs"
@@ -220,8 +220,6 @@ ActiveRecord::Schema.define(version: 20150216224902) do
   add_foreign_key "jobfunctions", "jobs"
   add_foreign_key "jobs", "companies"
   add_foreign_key "military_experiences", "users"
-  add_foreign_key "sectors", "companies"
   add_foreign_key "statuses", "jobs"
-  add_foreign_key "types", "companies"
   add_foreign_key "work_histories", "users"
 end

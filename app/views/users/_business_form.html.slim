@@ -15,8 +15,8 @@
     = f.label :password_confirmation, class: "control-label"
     = f.password_field :password_confirmation, class: "form-control"
   .form-group
-    = f.label @veteran_message, class: "control-label"
-    = f.radio_button :business, "0"
+    = f.label @business_message, class: "control-label"
+    = f.radio_button :business, "1"
   div
     = f.submit @submit_message, class: "btn btn-primary"
         

@@ -2,9 +2,8 @@ class Company < ActiveRecord::Base
 	has_secure_password
 
 	belongs_to :user
-
-	has_one :type
-	has_one :sector
+	belongs_to :type
+	belongs_to :sector
 
 	has_many :jobs
 	
