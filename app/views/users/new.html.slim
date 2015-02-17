@@ -1,8 +1,71 @@
-.container.signup
-  .col-md-offset-4.col-md-4
-    .col-md-4
-    h2 Sign Up as a Veteran
-    == render 'form'
-    .col-md-4
-    h2 Sign Up as a Business
-    == render "business_form"
+.col-md-offset-3.col-md-8
+	.col-md-6
+		button.btn.btn-primary.btn-lg data-target="#veteranModal" data-toggle="modal" type="button" 
+		  | Sign Up As A Veteran
+		/! Modal
+		#veteranModal.modal.fade aria-hidden="true" aria-labelledby="veteranModalLabel" role="dialog" tabindex="-1" 
+		  .modal-dialog
+		    .modal-content
+		      .modal-header
+		        button.close aria-label="Close" data-dismiss="modal" type="button" 
+		          span aria-hidden="true"  &times;
+		        h4#veteranModalLabel.modal-title Veteran Sign Up
+		      .modal-body
+						= form_for @user do |f|
+						  .form-group
+						    = f.label :first_name, class: "control-label"
+						    = f.text_field :first_name, class: "form-control"
+						  .form-group
+						    = f.label :last_name, class: "control-label"
+						    = f.text_field :last_name, class: "form-control"
+						  .form-group
+						    = f.label :email, class: "control-label" 
+						    = f.text_field :email, class: "form-control"
+						  .form-group
+						    = f.label :password, class: "control-label"
+						    = f.password_field :password, class: "form-control"
+						  .form-group
+						    = f.label :password_confirmation, class: "control-label"
+						    = f.password_field :password_confirmation, class: "form-control"
+						  .form-group
+						    = f.label @veteran_message, class: "control-label"
+						    = f.check_box :business, value: "0"
+						  div
+						    = f.submit @submit_message, class: "btn btn-primary"
+		      .modal-footer
+		        button.btn.btn-default data-dismiss="modal" type="button"  Close
+	.col-md-6
+		button.btn.btn-primary.btn-lg data-target="#companyModal" data-toggle="modal" type="button" 
+		  | Sign Up As A Company
+		/! Modal
+		#companyModal.modal.fade aria-hidden="true" aria-labelledby="companyModalLabel" role="dialog" tabindex="-1" 
+		  .modal-dialog
+		    .modal-content
+		      .modal-header
+		        button.close aria-label="Close" data-dismiss="modal" type="button" 
+		          span aria-hidden="true"  &times;
+		        h4#companyModalLabel.modal-title Company Sign Up
+		      .modal-body
+						= form_for @user do |f|
+						  .form-group
+						    = f.label :first_name, class: "control-label"
+						    = f.text_field :first_name, class: "form-control"
+						  .form-group
+						    = f.label :last_name, class: "control-label"
+						    = f.text_field :last_name, class: "form-control"
+						  .form-group
+						    = f.label :email, class: "control-label" 
+						    = f.text_field :email, class: "form-control"
+						  .form-group
+						    = f.label :password, class: "control-label"
+						    = f.password_field :password, class: "form-control"
+						  .form-group
+						    = f.label :password_confirmation, class: "control-label"
+						    = f.password_field :password_confirmation, class: "form-control"
+						  .form-group
+						    = f.label @business_message, class: "control-label"
+						    = f.check_box :business, value: "1"
+						  div
+						    = f.submit @submit_message, class: "btn btn-primary"
+		      .modal-footer
+		        button.btn.btn-default data-dismiss="modal" type="button"  Close	        
