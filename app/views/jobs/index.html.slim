@@ -1,2 +1,22 @@
-<h1>Jobs#index</h1>
-<p>Find me in app/views/jobs/index.html.erb</p>
+ul
+	- @jobs.each do |j| 
+		li
+			= j.title
+			br
+			= j.city
+			br
+			= j.state
+			br
+			= j.description
+			br
+			= j.salary
+			br
+			= j.company.name
+			br
+			= j.company.contact_name
+			br
+			= j.company.contact_email
+			br
+			= j.company.contact_position
+			br
+			= j.company.contact_phone

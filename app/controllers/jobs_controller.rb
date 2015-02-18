@@ -8,10 +8,11 @@ class JobsController < ApplicationController
   end
 
   def create
-  	@job = User.Company.Job.new(jobs_params)
+  	@job = Job.new(jobs_params)
+    @job.company = current_user.company
   	if @job.save
   		flash[:notice] = "Job successfully created!"
-  		redirect_to job_path
+  		redirect_to @job
   	else
   		render :new
   	end
