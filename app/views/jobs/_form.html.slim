@@ -23,5 +23,9 @@
   	= f.fields_for :jobfunctions do |jobfunction|
   		== render 'jobfunction_fields', f: jobfunction
   br
+  #companies
+    = f.fields_for :companies do |company|
+      == render 'company_fields', f: company
+  br
   div
   	= f.submit
