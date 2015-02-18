@@ -1,0 +1,4 @@
+.nested-fields
+	.field
+	  = f.label :name, class: "control-label"
+    = collection_select(:company, :sector_id, Sector.all, :id, :name)

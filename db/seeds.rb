@@ -14,3 +14,15 @@
 Type.where(name: "Public").first_or_create!
 Type.where(name: "Private").first_or_create!
 
+Sector.where(name: "Accounting, tax preparation, book keeping and payroll services").first_or_create!
+Sector.where(name: "Legal services").first_or_create!
+Sector.where(name: "Oil and gas extraction").first_or_create!
+Sector.where(name: "Commercial and industrial machinery and equipment rental and leasing").first_or_create!
+Sector.where(name: "Real estate").first_or_create!
+Sector.where(name: "Medical").first_or_create!
+Sector.where(name: "Management companies").first_or_create!
+Sector.where(name: "Technology").first_or_create!
+Sector.where(name: "Banking").first_or_create!
+
+
+

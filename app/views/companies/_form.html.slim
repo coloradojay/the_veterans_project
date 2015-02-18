@@ -39,6 +39,10 @@
   #type
     = f.fields_for :type do |t|
       == render 'type_fields', f: t
+  h3 Company Sector
+  #sector
+    = f.fields_for :sector do |sec|
+      == render 'sector_fields', f: sec
   h3 Add A Veteran Progam
   #vet_programs
     = f.fields_for :vet_programs do |vp|

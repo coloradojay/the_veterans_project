@@ -4,9 +4,7 @@ class Company < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :type
 	belongs_to :sector
-
 	has_many :jobs
-	
 	has_and_belongs_to_many :vet_programs
 
 	accepts_nested_attributes_for :type, reject_if: :all_blank, allow_destroy: true
