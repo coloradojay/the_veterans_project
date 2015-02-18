@@ -35,6 +35,10 @@
   .form-group
     = f.label :contact_phone, class: "control-label", placeholder: "Contact Phone"
     = f.text_field :contact_phone, class: "form-control"
+  h3 Public or Private
+  #type
+    = f.fields_for :type do |t|
+      == render 'type_fields', f: t
   h3 Add A Veteran Progam
   #vet_programs
     = f.fields_for :vet_programs do |vp|

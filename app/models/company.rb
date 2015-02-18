@@ -9,6 +9,9 @@ class Company < ActiveRecord::Base
 	
 	has_and_belongs_to_many :vet_programs
 
+	accepts_nested_attributes_for :type, reject_if: :all_blank, allow_destroy: true
+	accepts_nested_attributes_for :vet_programs, reject_if: :all_blank, allow_destroy: true
+
 	validates :name, presence: true
 	validates :address1, presence: true
 	validates :city, presence: true

@@ -1,11 +1,15 @@
 class CompaniesController < ApplicationController
   def new
     @company = Company.new
+    @company.build_type
+    # build section association like type association
+    @company.vet_programs.build
     @submit_message = 'Sign Up'
   end
 
   def create
     @company = Company.new(company_params)
+    binding.pry
     @company.user = current_user
     if @company.save
       session[:company_id] = @company.id
@@ -48,6 +52,10 @@ class CompaniesController < ApplicationController
 
   private
     def company_params
-        params.require(:company).permit(:name, :address1, :address2, :city, :state, :zip, :email, :phone_number, :website, :facebook, :twitter, :google_plus, :password, :description, :num_employees, :contact_name, :contact_position, :contact_email, :contact_phone, :job, :sector, :type, :vet_program)
+        params.require(:company).permit(:name, :address1, :address2, :city, 
+            :state, :zip, :email, :phone_number, :website, :facebook, :twitter, 
+            :google_plus, :password, :description, :num_employees, :contact_name, 
+            :contact_position, :contact_email, :contact_phone,:type_id,
+            vet_programs_attributes: [:id, :name, :website, :_destroy])
     end
 end
