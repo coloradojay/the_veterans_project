@@ -5,6 +5,7 @@ class JobsController < ApplicationController
 
   def new
   	@job = Job.new
+    @employment_types = EmploymentType.all
   end
 
   def create
