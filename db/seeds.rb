@@ -6,6 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-EmploymentType.create(name: 'Part-Time')
-EmploymentType.create(name: 'Full-Time')
-EmploymentType.create(name: 'Contractor')
+
+EmploymentType.where(name: 'Part-Time').first_or_create!
+EmploymentType.where(name: 'Full-Time').first_or_create!
+EmploymentType.where(name: 'Contractor').first_or_create!
+
+Type.where(name: "public").first_or_create!
+Type.where(name: "private").first_or_create!
+

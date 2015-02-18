@@ -1,30 +1,35 @@
-= link_to "edit company", edit_company_path(@user)
-h3 Company Contact
-= "#{@company.contact_name}"
-br
-= "#{@company.contact_position}"
-br
-= "#{@company.contact_email}"
-br
-= "#{@company.contact_phone}"
-br
-h3 Company Addresss
-= "#{@company.address1}"
-= "#{@company.city}, #{@company.state}. #{@company.zip}"
-br 
-h3 Email
-= @company.email
-= @company.phone_number
-br
-h3 Website:
-= @company.website
-h3 Social Medias
-= @company.facebook
-= @company.twitter
-= @company.google_plus
-h3 Company Description
-= @company.description
-h3 Veteran Affliates
-= @company.name
-br
-= @company.website
+- if @company
+	= link_to "edit company", edit_company_path(@company)
+	h3 Company Contact
+	= "#{@company.contact_name}"
+	br
+	= "#{@company.contact_position}"
+	br
+	= "#{@company.contact_email}"
+	br
+	= "#{@company.contact_phone}"
+	br
+	h3 Company Addresss
+	= "#{@company.address1}"
+	= "#{@company.city}, #{@company.state}. #{@company.zip}"
+	br 
+	h3 Email
+	= @company.email
+	= @company.phone_number
+	br
+	h3 Website:
+	= @company.website
+	h3 Social Medias
+	= @company.facebook
+	= @company.twitter
+	= @company.google_plus
+	h3 Company Description
+	= @company.description
+	h3 Veteran Affliates
+	= @company.name
+	br
+	= @company.website
+	h3 Public or Private
+	= @company.type.name
+- else
+	= link_to "Add A Company", new_company_path
