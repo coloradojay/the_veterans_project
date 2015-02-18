@@ -34,16 +34,12 @@
     = f.text_field :contact_email, class: "form-control"
   .form-group
     = f.label :contact_phone, class: "control-label", placeholder: "Contact Phone"
-    = f.text_field :contact_phone, class: "form-control"    
-  .form-group
-    = f.label :login_email, class: "control-label", placeholder: "Login Email"
-    = f.text_field :email, class: "form-control", placeholder: "bob@acme.com"
-  .form-group
-    = f.label :password, class: "control-label", placeholder: "Password"
-    = f.password_field :password, class: "form-control"
-  .form-group
-    = f.label :password_confirmation, class: "control-label", placeholder: "Confirm Password"
-    = f.password_field :password_confirmation, class: "form-control"
+    = f.text_field :contact_phone, class: "form-control"
+  h3 Add A Veteran Progam
+  #vet_programs
+    = f.fields_for :vet_programs do |vp|
+      == render 'vet_program_fields', f: vp
+      .links= link_to_add_association 'Add A Veteran Program', f, :vet_programs
   br
   div
     = f.submit @submit_message, class: "btn btn-primary"  
