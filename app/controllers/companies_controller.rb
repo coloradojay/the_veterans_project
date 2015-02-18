@@ -9,7 +9,6 @@ class CompaniesController < ApplicationController
 
   def create
     @company = Company.new(company_params)
-    binding.pry
     @company.user = current_user
     if @company.save
       session[:company_id] = @company.id
