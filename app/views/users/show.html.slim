@@ -10,6 +10,7 @@
       = link_to "Edit Account", edit_user_path(@user)
       h3= "#{@user.email}"
       br
+      / = current_user_is_business?
       h3 Address
       - unless @user.address.blank?
         = simple_format(@user.address.full_address)

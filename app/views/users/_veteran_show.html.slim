@@ -20,14 +20,14 @@ h3 Education
 	p= e.description
 h3 Work History
 - @user.work_histories.each do |wk|
-= wk.company_name.upcase
-br
-= "#{wk.job_title}"
-br
-= "worked from #{wk.start_date.strftime("%Y")} - #{wk.end_date.strftime("%Y")}"
-br
-= wk.description
-p
+	= wk.company_name.upcase
+	br
+	= "#{wk.job_title}"
+	br
+	= "worked from #{wk.start_date.strftime("%Y")} - #{wk.end_date.strftime("%Y")}"
+	br
+	= wk.description
+	p
 h3 Skills 
 ul
 - @user.skills.each do |sk|
