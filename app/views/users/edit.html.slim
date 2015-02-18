@@ -1,7 +1,7 @@
 .row
   .col-sm-6.col-sm-offset-3
   / this will show switch from veteran to company depending on which is logged in. 
-    - if @current_user
+    - unless @current_company
       == render 'form'
     - else
       == render 'form2'
