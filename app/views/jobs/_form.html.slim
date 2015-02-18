@@ -1,4 +1,4 @@
-= form_for @job do |f|
+= form_for [@job] do |f|
   .form-group
   	= f.label :title, placeholder: "Job Title", class: "control-label"
   	= f.text_field :title, class: "form-control"
@@ -23,9 +23,13 @@
   	= f.fields_for :jobfunctions do |jobfunction|
   		== render 'jobfunction_fields', f: jobfunction
   br
-  #companies
-    = f.fields_for :companies do |company|
-      == render 'company_fields', f: company
+  #experience
+    = f.fields_for :experiences do |experience|
+      == render 'experience_fields', f: experience
   br
+  #employment_type
+    = f.fields_for :employment_types do |et|
+      == render 'employment_type_fields', f: et
+  br    
   div
   	= f.submit

@@ -4,13 +4,17 @@ class JobsController < ApplicationController
   end
 
   def new
-  	@job = Job.new
-    @employment_types = EmploymentType.all
+    @job = current_user.company.jobs.new
+    # @employment_types = EmploymentType.all
+    @job.build_employment_type
+    @job.build_status
+    @job.build_jobfunction
+    @job.build_experience
   end
 
   def create
-  	@job = Job.new(jobs_params)
-    @job.company = current_user.company
+    @job = current_user.company.jobs.new(jobs_params)
+    binding.pry
   	if @job.save
   		flash[:notice] = "Job successfully created!"
   		redirect_to @job
@@ -40,6 +44,6 @@ class JobsController < ApplicationController
 
   private
   	def jobs_params
-  		params.require(:job).permit(:title, :city, :state, :description, :salary, status_attributes: [:id, :name, :_destroy], jobfunction_attributes: [:id, :name, :_destroy], experience_attributes: [:id, :name, :_destroy], company_attributes: [:id, :name, :_destroy], skills_attributes: [:id, :name, :_destroy], user_attributes: [:id, :name, :_destroy])
+  		params.require(:job).permit(:title, :city, :state, :description, :salary, :employment_type_id, :experience_id, :status_id, :jobfunction_id, :user_id, :company_id, skills_attributes: [:id, :name, :_destroy])
   	end
 end

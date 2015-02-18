@@ -1,3 +1,4 @@
 .nested-fields
 	.field
-		= f.text_field :name, class: "form-control", placeholder: "Skills"
+	  = f.label :name, class: "control-label"
+    = collection_select(:job, :skill_id, Skill.all, :id, :name)
