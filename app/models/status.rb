@@ -1,7 +1,6 @@
 class Status < ActiveRecord::Base
 
-	belongs_to :job
+	has_many :jobs
 
 	validates :name, presence: true
-	validates :job, presence: true	
 end

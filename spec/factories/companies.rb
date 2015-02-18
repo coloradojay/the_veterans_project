@@ -15,6 +15,8 @@ FactoryGirl.define do
     contact_position { Faker::Name.title }
     contact_email { Faker::Internet.email }
     contact_phone { Faker::PhoneNumber.phone_number }
+    type
+    sector
 
   	trait :with_address2 do
   		address2 { Faker::Address.secondary_address }

@@ -6,7 +6,7 @@ RSpec.describe Experience, type: :model do
   		ex = build(:experience)
   		expect(ex.save).to eq true
   	end
-  	it { should belong_to(:job) }
+  	it { should have_many(:jobs) }
   	it { should validate_presence_of(:name) }
   end
 end
