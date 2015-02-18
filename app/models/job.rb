@@ -1,11 +1,10 @@
 class Job < ActiveRecord::Base
 	
 	belongs_to :company
-
-	has_one :employment_type
-	has_one :experience
-	has_one :jobfunction
-	has_one :status
+	belongs_to :employment_type
+	belongs_to :experience
+	belongs_to :jobfunction
+	belongs_to :status
 
 	has_and_belongs_to_many :skills
 
@@ -21,5 +20,9 @@ class Job < ActiveRecord::Base
 	validates :description, presence: true
 	validates :salary, presence: true
 	validates :company, presence: true
+	validates :employment_type, presence: true
+	validates :experience, presence: true
+	validates :jobfunction, presence: true
+	validates :status, presence: true
 
 end

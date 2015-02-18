@@ -6,7 +6,7 @@ RSpec.describe Status, type: :model do
   		st = build(:status)
   		expect(st.save).to eq true
   	end
-  	it { should belong_to(:job) }
+  	it { should have_many(:jobs) }
   	it { should validate_presence_of(:name) }
   end
 end
