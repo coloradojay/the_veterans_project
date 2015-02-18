@@ -14,9 +14,6 @@
   .form-group
     = f.label :password_confirmation, class: "control-label"
     = f.password_field :password_confirmation, class: "form-control"
-  .form-group
-    = f.label @veteran_message, class: "control-label"
-    = f.checkbox :business, "0"
   div
     = f.submit @submit_message, class: "btn btn-primary"
         
