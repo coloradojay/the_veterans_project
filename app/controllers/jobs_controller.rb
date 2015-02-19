@@ -14,7 +14,6 @@ class JobsController < ApplicationController
 
   def create
     @job = current_user.company.jobs.new(jobs_params)
-    binding.pry
   	if @job.save
   		flash[:notice] = "Job successfully created!"
   		redirect_to @job

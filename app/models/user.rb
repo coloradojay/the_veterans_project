@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
 	has_secure_password
 
 	has_one :military_experience
@@ -7,6 +8,8 @@ class User < ActiveRecord::Base
 	has_many :educations
 	has_many :work_histories
 	has_and_belongs_to_many :skills
+
+	mount_uploader :avatar, AvatarUploader
 
 	accepts_nested_attributes_for :educations, reject_if: :all_blank, allow_destroy: true
 	accepts_nested_attributes_for :work_histories, reject_if: :all_blank, allow_destroy: true

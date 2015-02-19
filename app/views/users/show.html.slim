@@ -2,7 +2,7 @@
   .span3.well
     center
       h2= "#{@user.first_name.titleize} #{@user.last_name.titleize}"
-      / = link_to image_tag( @user.avatar.url, size: "200x200", class: "img-circle"), edit_user_path(@user)
+      = image_tag @user.avatar.url(:small) if @user.avatar.url(:small).present?
       br
       em Click image to edit your profile
       br

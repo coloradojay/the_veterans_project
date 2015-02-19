@@ -32,23 +32,18 @@ gem "omniauth-idme"
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+##### CarrierWave Gems #####
+gem 'carrierwave'
+gem 'figaro'
 
-group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  # gem 'byebug'
+gem 'fog'         # required for Amazon S3
+gem 'mini_magick' # for post-upload image processing
 
-  # Access an IRB console on exception pages or by using <%= console %> in views
-  gem 'web-console', '~> 2.0'
-
-  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-end
-
-gem 'cocoon'
-gem 'slim'
+gem 'cocoon' # for nested forms
+gem 'slim' # for erb replacement
 gem 'chronic'
-gem 'bootstrap-sass'
-gem 'autoprefixer-rails'
+gem 'bootstrap-sass' # bootstrap
+gem 'autoprefixer-rails' #bootstrap
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
@@ -60,6 +55,10 @@ group :development, :test do
   gem 'spring-commands-rspec'
   gem 'shoulda'
   gem 'faker'
+  # Access an IRB console on exception pages or by using <%= console %> in views
+  gem 'web-console', '~> 2.0'
+  # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+  gem 'spring'  
 end
 
 group :development do
