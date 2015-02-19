@@ -44,6 +44,8 @@ gem 'slim' # for erb replacement
 gem 'chronic'
 gem 'bootstrap-sass' # bootstrap
 gem 'autoprefixer-rails' #bootstrap
+# Use font-awesome with bootstrap
+gem 'font-awesome-rails'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
