@@ -16,8 +16,15 @@
         = simple_format(@user.address.full_address)
       - if current_user_is_veteran?
         == render 'veteran_show'
+        / = link_to 'Checkout out all the Jobs', jobs_path
       - else     
         == render 'company_show'
+      - if current_user_is_business?
+      br
+      h3 See all the companines in our network!
+      = link_to 'click here', companies_path
+
+
 
 
 
