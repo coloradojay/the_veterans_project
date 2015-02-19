@@ -17,7 +17,7 @@ class CompaniesController < ApplicationController
     @company.user = current_user
     if @company.save
       flash[:notice] = "Company successfully created!"
-      redirect_to @company
+      redirect_to current_user
     else
       render :new
     end
