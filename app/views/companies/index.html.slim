@@ -3,6 +3,27 @@
     center
      br
      - @companies.each do |c|
-     	= "#{c.name}"
-     	br
-     
+ 			h3 Company
+   			= "#{c.name}"
+	     	br
+	     	= "#{c.address1}"
+	     	br
+	     	= "#{c.city}, #{c.state} #{c.zip}"
+	     	br
+	     	= "#{c.email}"
+	     	br
+	     	= "#{c.website}"
+	     	br
+	     	= "#{c.num_employees}"
+	     	br
+	     	= "#{c.description}"
+	     	br
+	     	= "#{c.contact_name}"
+	     	br
+	     	= "#{c.contact_position}"
+	     	br
+	     	= "#{c.contact_email}"
+	     	br
+	     	= "#{c.contact_phone}"
+  
+    
