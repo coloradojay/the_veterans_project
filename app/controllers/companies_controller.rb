@@ -16,9 +16,8 @@ class CompaniesController < ApplicationController
     @company = Company.new(company_params)
     @company.user = current_user
     if @company.save
-      session[:company_id] = @company.id
       flash[:notice] = "Company successfully created!"
-      redirect_to company_path(@company)
+      redirect_to @company
     else
       render :new
     end

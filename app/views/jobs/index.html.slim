@@ -1,22 +1,17 @@
-ul
-	- @jobs.each do |j| 
-		li
-			= j.title
-			br
-			= j.city
-			br
-			= j.state
-			br
-			= j.description
-			br
-			= j.salary
-			br
-			= j.company.name
-			br
-			= j.company.contact_name
-			br
-			= j.company.contact_email
-			br
-			= j.company.contact_position
-			br
-			= j.company.contact_phone
+.container
+	.row
+		.col-md-12.col-md-offset-4
+			h1 See Current Job Postings
+	.row
+		.col-md-8.col-md-offset-1
+			- @jobs.each do |j| 
+				p
+					= j.title
+					br
+					= j.city
+					br
+					= j.state
+					br
+					= j.description.truncate_words(10)
+					br
+					= link_to "Find Out More Information About This Job", job_path(j)

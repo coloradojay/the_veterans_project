@@ -1,5 +1,4 @@
 class Company < ActiveRecord::Base
-	has_secure_password
 
 	belongs_to :user
 	belongs_to :type
@@ -15,7 +14,6 @@ class Company < ActiveRecord::Base
 	validates :city, presence: true
 	validates :state, presence: true
 	validates :zip, presence: true
-	validates :email, presence: true
 	validates :website, presence: true
 	validates :num_employees, presence: true
 	validates :description, presence: true
@@ -24,6 +22,5 @@ class Company < ActiveRecord::Base
 	validates :contact_email, presence: true	
 	validates :contact_phone, presence: true
 	validates :verified, inclusion: { in: [true, false] }
-	validates :email, presence: true, uniqueness: { case_sensitive: false }, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\z/i }
 
 end
