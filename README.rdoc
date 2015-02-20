@@ -1,4 +1,4 @@
-/c == README
+== README
 
 {<img src="https://circleci.com/gh/coloradojay/the_veterans_project.svg?style=svg" alt="Circle CI" />}[https://circleci.com/gh/coloradojay/the_veterans_project]
 
