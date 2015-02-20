@@ -39,14 +39,14 @@ Status.where(name: "Pending").first_or_create!
 Status.where(name: "Open").first_or_create!
 Status.where(name: "Closed").first_or_create!
 
-JobFunction.where(name: "Architect").first_or_create!
-JobFunction.where(name: "CTO").first_or_create!
-JobFunction.where(name: "Database Administrator").first_or_create!
-JobFunction.where(name: "Dev Ops").first_or_create!
-JobFunction.where(name: "Manager").first_or_create!
-JobFunction.where(name: "QA").first_or_create!
-JobFunction.where(name: "Web Designer").first_or_create!
-JobFunction.where(name: "Web Developer").first_or_create!
+Jobfunction.where(name: "Architect").first_or_create!
+Jobfunction.where(name: "CTO").first_or_create!
+Jobfunction.where(name: "Database Administrator").first_or_create!
+Jobfunction.where(name: "Dev Ops").first_or_create!
+Jobfunction.where(name: "Manager").first_or_create!
+Jobfunction.where(name: "QA").first_or_create!
+Jobfunction.where(name: "Web Designer").first_or_create!
+Jobfunction.where(name: "Web Developer").first_or_create!
 
 
 
