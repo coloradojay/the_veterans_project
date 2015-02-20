@@ -6,10 +6,8 @@ FactoryGirl.define do
   	state { Faker::Address.state }
   	zip { Faker::Address.zip }
   	phone_number { Faker::PhoneNumber.phone_number }
-  	email { Faker::Internet.email }
   	website "example.com"
   	description { Faker::Lorem.paragraph }
-  	password "password"
   	num_employees "20"
     contact_name { Faker::Name.name }
     contact_position { Faker::Name.title }
@@ -41,7 +39,9 @@ FactoryGirl.define do
       vet_programs
     end
 
-    factory :full_company, traits:[:with_verified, :with_address2, :with_facebook, :with_twitter, :with_google_plus]
+    factory :full_company, traits:[:with_verified, 
+      :with_address2, :with_facebook, :with_twitter, 
+      :with_google_plus]
    
   end
 
