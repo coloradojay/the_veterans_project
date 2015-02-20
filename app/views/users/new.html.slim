@@ -31,8 +31,7 @@
 						    = f.label :password_confirmation, class: "control-label"
 						    = f.password_field :password_confirmation, class: "form-control"
 						  .form-group
-						    = f.label @veteran_message, class: "control-label"
-						    = f.check_box :business, value: "0"
+						    = f.hidden_field :business, value: "0"
 						  div
 						    = f.submit @submit_message, class: "btn btn-primary"
 		      .modal-footer
@@ -66,8 +65,7 @@
 						    = f.label :password_confirmation, class: "control-label"
 						    = f.password_field :password_confirmation, class: "form-control"
 						  .form-group
-						    = f.label @business_message, class: "control-label"
-						    = f.check_box :business, value: "1"
+						    = f.hidden_field :business, value: "1"
 						  div
 						    = f.submit @submit_message, class: "btn btn-primary"
 		      .modal-footer
