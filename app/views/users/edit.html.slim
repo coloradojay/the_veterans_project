@@ -1,7 +1,6 @@
 .row
   .col-sm-6.col-sm-offset-3
-  / this will show switch from veteran to company depending on which is logged in. 
-  == render 'form'
+    == render 'form'
   .col-md-2
     - unless @user.errors.full_messages.empty?
       h1.text-center Oops!

@@ -39,8 +39,8 @@ h3 Work History
 	= link_to "Add Work History", edit_user_path(@user)
 h3 Skills 
 - unless @user.skills.blank?
-	ul
 	- @user.skills.each do |sk|
-  	li= sk.name
-- else
+		ul
+	  	li= sk.name
+- else	  	
 	= link_to "Add Skills", edit_user_path(@user)
