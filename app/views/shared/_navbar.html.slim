@@ -5,6 +5,7 @@
     - if current_user
       li= link_to "Jobs", jobs_path
       li= link_to "#{current_user.first_name}'s Profile", current_user
+      li= link_to "#{current_user.company.name}"
       li= link_to "Log Out", session_path(current_user.id), method: :delete
     - else
       li= link_to "Sign Up", new_user_path
