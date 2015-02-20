@@ -1,26 +1,20 @@
 .nested-fields
 	.field
-		= f.label :company_name
-		br
-		= f.text_field :company_name
+		= f.label :company_name, class: "control-label"
+		= f.text_field :company_name, class: "form-control"
 	.field
-		= f.label :job_title
-		br
-		= f.text_field :job_title
+		= f.label :job_title, class: "control-label"
+		= f.text_field :job_title, class: "form-control"
 	.field
-		= f.label :location
-		br
-		= f.text_field :location
+		= f.label :location, class: "control-label"
+		= f.text_field :location, class: "form-control"
 	.field
-		= f.label "Start Year"
-		br
-		= f.date_select :start_date
+		= f.label "Start Year", class: "control-label"
+		= f.date_field :start_date, class: "form-control"
 	.field
-		= f.label "End Year"
-		br
-		= f.date_select :end_date
+		= f.label "End Year", class: "control-label"
+		= f.date_field :end_date, class: "form-control"
 	.field
-		= f.label :description
-		br
-		= f.text_area :description
+		= f.label :description, class: "control-label"
+		= f.text_area :description, class: "form-control"
 	= link_to_remove_association "Remove Work History", f

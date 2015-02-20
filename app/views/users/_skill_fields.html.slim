@@ -1,6 +1,5 @@
 .nested-fields
 	.field
-		= f.label "Skill"
-		br
-		= f.text_field :name
+		= f.label "Skill", class: "control-label"
+		= f.text_field :name, class: "form-control"
 	= link_to_remove_association "Remove Work History", f

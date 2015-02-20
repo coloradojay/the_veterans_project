@@ -1,26 +1,20 @@
 .nested-fields
 	.field
-		= f.label :school_name
-		br
-		= f.text_field :school_name
+		= f.label :school_name, class: "control-label"
+		= f.text_field :school_name, class: "form-control"
 	.field
-		= f.label :degree_name
-		br
-		= f.text_field :degree_name
+		= f.label :degree_name, class: "control-label"
+		= f.text_field :degree_name, class: "form-control"
 	.field
-		= f.label :field_of_study
-		br
-		= f.text_field :field_of_study
+		= f.label :field_of_study, class: "control-label"
+		= f.text_field :field_of_study, class: "form-control"
 	.field
-		= f.label "Start Year"
-		br
-		= f.date_select :yr_attended_from
+		= f.label "Start Year", class: "control-label"
+		= f.date_select :yr_attended_from, class: "form-control"
 	.field
-		= f.label "End Year"
-		br
-		= f.date_select :yr_attended_to
+		= f.label "End Year", class: "control-label"
+		= f.date_select :yr_attended_to, class: "form-control"
 	.field
-		= f.label :description
-		br
-		= f.text_area :description
+		= f.label :description, class: "control-label"
+		= f.text_area :description, class: "form-control"
 	= link_to_remove_association "Remove Education", f

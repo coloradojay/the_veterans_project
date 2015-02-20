@@ -16,26 +16,26 @@
     = f.password_field :password_confirmation, class: "form-control"
   h1 Address
   #address
-    = f.fields_for :address do |a|
-      == render 'address_fields', f: a  
+  = f.fields_for :address do |a|
+    == render 'address_fields', f: a  
   h1 Military Experience
   #military_experience
-    = f.fields_for :military_experience do |me|
-      == render 'military_experience_fields', f: me
+  = f.fields_for :military_experience do |me|
+    == render 'military_experience_fields', f: me
   h1 Education
   #educations
-    = f.fields_for :educations do |education|
-      == render 'education_fields', f: education
-      .links= link_to_add_association 'Add Education', f, :educations
+  = f.fields_for :educations do |education|
+    == render 'education_fields', f: education
+    .links= link_to_add_association 'Add Education', f, :educations
   h1 Work History
   #work_histories
-    = f.fields_for :work_histories do |work_history|
-      == render 'work_history_fields', f: work_history
-      .links= link_to_add_association 'Add Work History', f, :work_histories
+  = f.fields_for :work_histories do |work_history|
+    == render 'work_history_fields', f: work_history
+    .links= link_to_add_association 'Add Work History', f, :work_histories
   h1 Skills
   #skills
-    = f.fields_for :skills do |skill|
-      == render 'skill_fields', f: skill
-      .links= link_to_add_association 'Add Skill', f, :skills
-    div
-      = f.submit @submit_message, class: "btn btn-primary"
+  = f.fields_for :skills do |skill|
+    == render 'skill_fields', f: skill
+    .links= link_to_add_association 'Add Skill', f, :skills
+  div
+   = f.submit @submit_message, class: "btn btn-primary"
