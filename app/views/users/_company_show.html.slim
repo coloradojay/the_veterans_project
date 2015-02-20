@@ -13,7 +13,10 @@
 	= "#{@company.address1}"
 	= "#{@company.city}, #{@company.state}. #{@company.zip}"
 	br 
-	h3 Phone number:
+	h3 Company Contact
+	= @company.contact_name
+	= @company.contact_position
+	= @company.contact_email
 	= @company.phone_number
 	br
 	h3 Website:
