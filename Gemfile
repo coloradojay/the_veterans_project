@@ -35,14 +35,13 @@ gem "omniauth-idme"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
-group :production, :development do
-  ##### CarrierWave Gems #####
-  gem 'carrierwave'
-  gem 'figaro'
 
-  gem 'fog'         # required for Amazon S3
-  gem 'mini_magick' # for post-upload image processing
-end
+##### CarrierWave Gems #####
+gem 'carrierwave'
+gem 'figaro'
+
+gem 'fog'         # required for Amazon S3
+gem 'mini_magick' # for post-upload image processing
 
 gem 'cocoon' # for nested forms
 gem 'slim' # for erb replacement
