@@ -23,21 +23,5 @@ RSpec.describe Company, type: :model do
 	  it { should validate_presence_of(:contact_email)}
 	  it { should validate_presence_of(:contact_phone)}
 	  it { should validate_inclusion_of(:verified).in_array([true, false]) }	
-	  it { should validate_presence_of(:email) }	
-		# it { should validate_uniqueness_of(:email) }	
-		it { should_not allow_value("blah").for(:email) }
-		it { should allow_value("test@test.com").for(:email) }
-  end
-  describe "test password authentication" do
-  	it "should be able to set a password" do
-  		comp = build(:company)
-  		expect(comp.respond_to?(:password)).to eq true
-  	end
-  	it "should be able to authenticate" do 
-  		comp = build(:company)
-  		comp.password = "password"
-  		expect(comp.authenticate("password")).to eq comp
-  		expect(comp.authenticate("wrongpassword")).to eq false
-  	end
   end
 end
