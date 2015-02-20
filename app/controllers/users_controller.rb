@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 	def show 
 		@user = User.find(params[:id])
 		@company = @user.company
+		@test = request.env['omniauth.auth']
 	end
 
 	def create

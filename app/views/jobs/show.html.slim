@@ -52,4 +52,6 @@
               h4 Description
               =@job.company.description
               h4 Sector
-              =@job.company.sector.name                   
+              =@job.company.sector.name 
+              br
+              = link_to @job.company_path(company_id)
