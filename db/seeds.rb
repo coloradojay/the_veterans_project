@@ -24,6 +24,29 @@ Sector.where(name: "Management companies").first_or_create!
 Sector.where(name: "Technology").first_or_create!
 Sector.where(name: "Banking").first_or_create!
 
+EmploymentType.where(name: "Full Time").first_or_create!
+EmploymentType.where(name: "Part Time").first_or_create!
+EmploymentType.where(name: "Contractor").first_or_create!
+EmploymentType.where(name: "Intern").first_or_create!
+
+Experience.where(name: "Junior").first_or_create!
+Experience.where(name: "Senior").first_or_create!
+Experience.where(name: "Mid-Career").first_or_create!
+Experience.where(name: "Management").first_or_create!
+Experience.where(name: "Executive").first_or_create!
+
+Status.where(name: "Pending").first_or_create!
+Status.where(name: "Open").first_or_create!
+Status.where(name: "Closed").first_or_create!
+
+JobFunction.where(name: "Architect").first_or_create!
+JobFunction.where(name: "CTO").first_or_create!
+JobFunction.where(name: "Database Administrator").first_or_create!
+JobFunction.where(name: "Dev Ops").first_or_create!
+JobFunction.where(name: "Manager").first_or_create!
+JobFunction.where(name: "QA").first_or_create!
+JobFunction.where(name: "Web Designer").first_or_create!
+JobFunction.where(name: "Web Developer").first_or_create!
 
 
 
