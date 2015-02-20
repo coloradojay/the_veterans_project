@@ -1,17 +1,20 @@
-.nav.navbar-fixed-top.navbar-brand#navbar
-  ul.nav.nav-pills
-    li= link_to "Home", root_path
-    li= link_to "About us", about_us_path
-    - if current_user
-      li= link_to "Jobs", jobs_path
-      li= link_to "#{current_user.first_name}'s Profile", current_user
-      li= link_to "#{current_user.company.name}"
-      li= link_to "Log Out", session_path(current_user.id), method: :delete
-    - else
-      li= link_to "Sign Up", new_user_path
-    - unless current_user
-      nav.form-inline.navbar-right
-        = form_for :login, url: {controller: :sessions, action: :create} do |f|
-          = f.text_field :email, placeholder: :email, class: "form-control"
-          = f.password_field :password, placeholder: :password, class: "form-control"
-          = f.submit "Login", :class => "btn btn-primary"      
+.nav.navbar.navbar-inverse.navbar-grey.navbar-none role="navigation"
+  navbar-header
+    button.navbar-toggle data-target="#navbar-collapse-02" data-toggle="collapse" type="button"
+      navbar-brand.brand= link_to "The Veteran's Project", root_path
+  #navbar-collapse-02.collapse.navbar-collapse
+    ul.nav.navbar-nav.navbar-right      
+      li= link_to "Home", root_path
+      li= link_to "About us", about_us_path
+      - if current_user
+        li= link_to "Jobs", jobs_path
+        li= link_to "#{current_user.first_name}'s Profile", current_user
+        li= link_to "Log Out", session_path(current_user.id), method: :delete
+      - else
+        li= link_to "Sign Up", new_user_path
+      - unless current_user
+        nav.navbar-nav.form-inline.navbar-right
+          = form_for :login, url: {controller: :sessions, action: :create} do |f|
+            = f.text_field :email, placeholder: :email, class: "form-control"
+            = f.password_field :password, placeholder: :password, class: "form-control"
+            = f.submit "Login", :class => "btn btn-primary"              
