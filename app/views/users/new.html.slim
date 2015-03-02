@@ -65,7 +65,8 @@
 						    = f.label :password_confirmation, class: "control-label"
 						    = f.password_field :password_confirmation, class: "form-control"
 						  .form-group
-						    = f.hidden_field :business, value: "1"
+						  	= f.label "Verify you are creating an account on behalf of a Business/Company"
+						    = f.check_box :business, value: "1"
 						  div
 						    = f.submit @submit_message, class: "btn btn-primary"
 		      .modal-footer
