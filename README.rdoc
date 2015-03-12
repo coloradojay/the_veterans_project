@@ -2,32 +2,24 @@
 
 {<img src="https://circleci.com/gh/coloradojay/the_veterans_project.svg?style=svg" alt="Circle CI" />}[https://circleci.com/gh/coloradojay/the_veterans_project]
 
+# Problems to solve: recently seperated veterans often find that programs available to them are outdated and do not meet the current business climate. 
+# Veterans bring immense value through experience, military training and maturity. This on-going project seeks to match their unique skill sets with veteran friendly companies & jobs which match the translation of their military + marketable skills. 
+
+# We have developed this project using TDD and will continue to refine tests using RSpec, FactoryGirl, Guard, ShouldaMatcher, Capybara and Poltergeist.
+
+# This project is built using:
 * Rails v.4.2
 
-* Ruby ruby 2.1.3
+* Ruby v2.1.3
 
-* postgresql
+* Postgresql
 
-* Shoulda Matcher for model test
-
-* Guard 
-
-* FactoryGirl
+* TDD
 
 * Cocoon
 
-* Deployed Heroku app
+* Slim
 
-* Problems to solve: recently seperated veterans often find that programs available to them are outdated and do not meet the current business climate. 
-* veterans bring immense value through experience, military training and maturity
-* This on going project seeks to match their skills with companies and jobs that match their skills. 
+* Bootstrap
 
-
-
-
-
-
-
-
-Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
