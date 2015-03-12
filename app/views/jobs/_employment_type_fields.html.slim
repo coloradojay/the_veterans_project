@@ -1,4 +1,4 @@
 .nested-fields
 	.field
-	  = f.label :name, class: "control-label"
+	  = f.label "Employment Type"
     = collection_select(:job, :employment_type_id, EmploymentType.all, :id, :name)

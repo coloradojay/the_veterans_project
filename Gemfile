@@ -50,6 +50,8 @@ gem 'bootstrap-sass' # bootstrap
 gem 'autoprefixer-rails' #bootstrap
 # Use font-awesome with bootstrap
 gem 'font-awesome-rails'
+# Use Modernizr for rails
+gem 'modernizr-rails'
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'

@@ -1,6 +1,49 @@
 .container
-  .row
-  	.col-sm-4.col-sm-offset-1
-  		.row
-  			.col-sm-4
-  				h2=@company.name
+  section
+    .row
+      .col-md-4
+      	img src="https://s3-us-west-1.amazonaws.com/theveteranproject/default_user_image.png"   
+        h5 Website
+        = link_to @company.website
+        h5 Phone Number
+        =@company.phone_number
+        h5 City
+        =@company.city
+        h5 State
+        =@company.state
+        h5 Number of Employees
+        =@company.num_employees
+        h5 Public/Private
+        =@company.type.name
+        h5 Sector
+        =@company.sector.name
+        br/
+        - if current_user_is_business?
+        	= link_to "Update Company Profile", edit_company_path(@company), class: 'a btn btn-success'
+        br/     
+      .col-md-8
+        .alert.alert-info
+          h2=@company.name
+          p=@company.description
+        .col-md-12
+        	h2 Contact
+        	h5=@company.contact_name
+        	=@company.contact_position
+        	p=@company.contact_email
+        	p=@company.contact_phone
+        	h2 Available Jobs
+        	-@company.jobs.each do |j|
+						p
+							= j.title
+							br
+							= j.city
+							br
+							= j.salary
+							br
+							= j.description.truncate_words(10)
+							br
+							= link_to "Find Out More Information About This Job", job_path(j)
+						hr
+        	h5 Add A New Job
+        	= link_to "Add A Job", new_job_path, class: 'a btn btn-info'            	
+

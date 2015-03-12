@@ -1,4 +1,4 @@
 .nested-fields
 	.field
-	  = f.label :name, class: "control-label"
+	  = f.label "Experience Level"
     = collection_select(:job, :experience_id, Experience.all, :id, :name)

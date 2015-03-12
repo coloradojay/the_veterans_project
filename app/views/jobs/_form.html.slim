@@ -1,35 +1,37 @@
 = form_for [@job] do |f|
   .form-group
-  	= f.label :title, placeholder: "Job Title", class: "control-label"
-  	= f.text_field :title, class: "form-control"
+  	= f.label "Job Title"
+  	= f.text_field :title, placeholder: "Ruby on Rails Developer", class: "form-control"
   .form-group
-  	= f.label :city, placeholder: "City", class: "control-label"
-  	= f.text_field :city, class: "form-control"
+  	= f.label "City"
+  	= f.text_field :city, placeholder: "Los Angeles", class: "form-control"
   .form-group
-  	= f.label :state, placeholder: "State", class: "control-label"
-  	= f.text_field :state, class: "form-control"
+  	= f.label "State"
+  	= f.text_field :state, placeholder: "CA", class: "form-control"
   .form-group
-  	= f.label :description, placeholder: "Job Description", class: "control-label"
+    = f.label "Salary Range"
+    = f.text_field :salary, placeholder: "60-80K", class: "form-control"    
+  .form-group
+  	= f.label "Job Description"
   	= f.text_area :description, class: "form-control"
-  .form-group
-  	= f.label :salary, placeholder: "Salary Range", class: "control-label"
-  	= f.text_field :salary, class: "form-control"
-  br
-  #statuses
-  	= f.fields_for :statuses do |status|
-  		== render 'status_fields', f: status
-  br
-  #jobfunctions
-  	= f.fields_for :jobfunctions do |jobfunction|
-  		== render 'jobfunction_fields', f: jobfunction
-  br
-  #experience
-    = f.fields_for :experiences do |experience|
-      == render 'experience_fields', f: experience
-  br
-  #employment_type
-    = f.fields_for :employment_types do |et|
-      == render 'employment_type_fields', f: et
-  br    
-  div
-  	= f.submit
+  .col-md-12
+    .row
+      .col-md-6
+        #statuses
+        	= f.fields_for :statuses do |status|
+        		== render 'status_fields', f: status
+        br
+        #jobfunctions
+        	= f.fields_for :jobfunctions do |jobfunction|
+        		== render 'jobfunction_fields', f: jobfunction
+      .col-md-6
+        #experience
+          = f.fields_for :experiences do |experience|
+            == render 'experience_fields', f: experience
+        br
+        #employment_type
+          = f.fields_for :employment_types do |et|
+            == render 'employment_type_fields', f: et  
+  .col-md-offset-5.col-md-6
+    .row
+  	  = f.submit

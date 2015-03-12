@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :companies
   resources :jobs
-  resources :sessions, only: [:new, :create, :destroy]
+  resources :sessions
 
   get "/login" => "sessions#new"
   post "/login" => "sessions#create"

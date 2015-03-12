@@ -48,5 +48,6 @@ Jobfunction.where(name: "QA").first_or_create!
 Jobfunction.where(name: "Web Designer").first_or_create!
 Jobfunction.where(name: "Web Developer").first_or_create!
 
-
+Type.where(name: "Public").first_or_create!
+Type.where(name: "Private").first_or_create!
 

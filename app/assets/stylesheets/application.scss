@@ -16,8 +16,8 @@
  @import "bootstrap";
  @import "font-awesome";
 
-
-
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,300,700);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,300,400);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700|Source+Sans+Pro:400,300,700);
 
 body {
@@ -189,6 +189,15 @@ a.text-success:hover {
 a.text-info:hover {
   color: #217dbb;
   }
+.bg {
+  background-image: url(https://s3-us-west-1.amazonaws.com/theveteranproject/bg_background.jpg) no-repeat top center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 100%;
+  height: 500px;
+
+}
 .bg-primary {
   color: #fff;
   background-color: #34495e;
@@ -8199,157 +8208,190 @@ input.todo-search-field::-webkit-input-placeholder {
 /* general styles */
 
 p {
-	font-size: 16px;	
+  font-size: 16px;  
 }
 
 h1 {
-	font-size: 34px;
-	line-height: 54px;
+  font-size: 34px;
+  line-height: 54px;
 }
 
 h2 {
-	font-size: 30px;
+  font-size: 30px;
 }
 
 h3 {
-	font-size: 26px;
+  font-size: 26px;
 }
 
 h4 {
-	font-size: 22px;
+  font-size: 22px;
 }
 
 h5 {
-	font-size: 18px;
+  font-size: 18px;
 }
 
 .light {
-	font-weight: 400;
+  font-weight: 400;
 }
 
 form .row {
-	margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 #page {
-	
+  
 }
 
 .item {
-	
+  
 }
 
 .item.header {
-	padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .item.content, .item.portfolio, .item.team, .item.pricing, .item.contact {
-	padding-top: 60px;
-	padding-bottom: 60px;
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .item.footer {
 }
 
 .margin-top-100 {
-	margin-top: 100px !important;
+  margin-top: 100px !important;
 }
 
 .margin-top-60 {
-	margin-top: 60px !important;
+  margin-top: 60px !important;
 }
 
 .margin-top-80 {
-	margin-top: 80px !important;
+  margin-top: 80px !important;
 }
 
 .margin-top-20 {
-	margin-top: 20px !important;
+  margin-top: 20px !important;
 }
 
 .margin-bottom-0 {
-	margin-bottom: 0px !important;
+  margin-bottom: 0px !important;
 }
 
 .margin-bottom-20 {
-	margin-bottom: 20px !important;
+  margin-bottom: 20px !important;
 }
 
 .margin-bottom-40 {
-	margin-bottom: 40px !important;
+  margin-bottom: 40px !important;
 }
 
 .margin-bottom-60 {
-	margin-bottom: 60px !important;
+  margin-bottom: 60px !important;
 }
 
 .margin-bottom-80 {
-	margin-bottom: 80px !important;
+  margin-bottom: 80px !important;
 }
 
 .padding-top-0 {
-	padding-top: 0px !important;
+  padding-top: 0px !important;
 }
 
 .padding-top-20 {
-	padding-top: 20px !important;
+  padding-top: 20px !important;
 }
 
 .padding-top-100 {
-	padding-top: 180px !important;
+  padding-top: 180px !important;
 }
 
 .padding-bottom-60 {
-	padding-bottom: 60px !important;
+  padding-bottom: 60px !important;
 }
 
 .padding-bottom-0 {
-	padding-bottom: 0px !important;
+  padding-bottom: 0px !important;
 }
 
 .margin-top-0 {
-	margin-top: 0px !important;
+  margin-top: 0px !important;
 }
 
 .width-100 {
-	width: 100%;
+  width: 100%;
 }
 
 header .navbar.plain li.active a {
-	color: #1ABC9C;
+  color: #1ABC9C;
 }
 
 header .navbar-white {
-	background: #fff;
+  background: #fff;
 }
 
 header .navbar-white a {
-	color: #3D566E;
+  color: #3D566E;
 }
 
 
 /* videos */
 
 .videoWrapper {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
-	padding-top: 25px;
-	height: 0;
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  height: 0;
 }
 
 .videoWrapper > iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .videoWrapper > .frameCover {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	width: 100%;
-	height: 100%;
-	background: none;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: none;
+}
+
+.jobdivide {
+  margin-top: 50px;
+  border-top-style: dotted;
+  padding-top: 30px;
+}
+
+.skill1divide {
+  border-right-style: dotted;
+}
+.skill2divide {
+  border-left-style: dotted;
+}
+
+.user-show {
+  padding: 50px 0;
+}
+
+.profile_pic {
+  width: 250px;
+  height: 250px;
+}
+.bg2 {
+  // background-image: url(https://s3-us-west-1.amazonaws.com/theveteranproject/bg_background.png);
+         background-repeat: no-repeat;
+        background-position: 0% bottom;
+        background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;        
+        background-color: #2f4154;
+        height: 500px;
 }

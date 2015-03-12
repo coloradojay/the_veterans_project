@@ -13,6 +13,7 @@ class UsersController < ApplicationController
 	def show 
 		@user = User.find(params[:id])
 		@company = @user.company
+		@name = [@user.first_name,@user.last_name].join(' ').squeeze(' ')
 		@test = request.env['omniauth.auth']
 	end
 
@@ -54,7 +55,8 @@ class UsersController < ApplicationController
 	def destroy 
 		User.find(params[:id]).destroy
 		flash[:notice]= "User has been deleted."
-		redirect_to users_path
+		session.delete(:user_id)
+		redirect_to root_path
 	end 
 
 	private
