@@ -37,6 +37,11 @@ html, body {
   width: 100%;
 }
 
+.panel > img {
+  width: 250px;
+  height: 250px;
+}
+
 .text-vcenter {
   display: table-cell;
   text-align: center;
@@ -122,15 +127,4 @@ footer .glyphicon:hover {
 .profile_pic {
   width: 250px;
   height: 250px;
-}
-.bg2 {
-  // background-image: url(https://s3-us-west-1.amazonaws.com/theveteranproject/bg_background.png);
-         background-repeat: no-repeat;
-        background-position: 0% bottom;
-        background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;        
-        background-color: #2f4154;
-        height: 500px;
 }
