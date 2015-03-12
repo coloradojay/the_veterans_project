@@ -9,12 +9,14 @@
             img src="https://s3-us-west-1.amazonaws.com/theveteranproject/default_user_image.png" /
         br/
         br/     
-        h5 Email
+        h5 
+          strong Email
         - if @user.email.present?
           =@user.email
         - else
           p Email Not Available
-        h5 Phone Number
+        h5
+          strong Phone Number
         - if @user.phone_number.present?
           =@user.phone_number
         - else
@@ -27,7 +29,8 @@
           a.login-trigger href="#" 
             img alt=("Verify your military affiliation with ID.me") src="https://s3.amazonaws.com/idme/buttons/troop_red_rnd_40.png"
         - else
-          h5 Add A New Job
+          h5
+            strong Add A New Job
           = link_to "Add A Job", new_job_path, class: 'a btn btn-info'         
       .col-md-8
         .alert.alert-info
